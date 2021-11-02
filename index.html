@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card Flip</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<input type="text" id="firstSide">
+<input type="text" id="secondSide">
+<div></div>
+<input type="checkbox" id="math" value = "math" v-model="checkedSubject">Math
+<input type="checkbox" id="history" value = "history" v-model="checkedSubject">History
+<input type="checkbox" id="science" value = "science" v-model="checkedSubject">Sciense
+<div></div>
+<button>CREATE</button>
+
+
+
+<div id="flashcards-app">
+
+
+
+
+    <div class="griddisplay" v-for="item in cards">
+        <div class="cardwrapper">
+            <div class="card" v-bind:class="card">
+                <div class="top" v-bind:class="item.category"></div>
+                <div  class="side1" id="side1">
+                    <div>{{item.question}}</div>
+                </div>
+                <div  class="side2" id="side2">
+                    <div>{{item.answer}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
